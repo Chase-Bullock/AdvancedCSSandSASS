@@ -42,6 +42,8 @@
 
 
 
+    //ROTATE CARDS ON HOVER
+
     &:hover &__side--front{
         transform: rotateY(-180deg);
     }
@@ -84,10 +86,12 @@
         top: 12rem;
         right: 2rem;
         width:75%;
+        z-index: 100;
 
     }
 
     &__heading-span {
+
 
         padding: 1rem 1.5rem;
         -webkit-box-decoration-break: clone;
@@ -155,7 +159,11 @@
         font-weight: 100;
     }
 
-    @include respond(tab-port) {
+    //@include respond(tab-port) {
+
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover: none) {
+    
         height: auto;
         border-radius: 3px;
         background-color: $color-white;

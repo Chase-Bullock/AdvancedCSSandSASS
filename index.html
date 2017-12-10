@@ -23,11 +23,16 @@
 
   <nav class="navigation__nav">
    <ul class="navigation__list">
-    <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natours</a></li>
-    <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benefits</a></li>
-    <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular tours</a></li>
-    <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-    <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+    <li class="navigation__item"><a href="#"  class="navigation__link js-scroll-to-about"><span>01</span>About Natours</a></li>
+
+    <li class="navigation__item"><a href="#" class="navigation__link js-scroll-to-features"><span>02</span>Your benefits</a></li>
+
+    <li class="navigation__item"><a href="#" class="navigation__link js-scroll-to-tour"><span>03</span>Popular tours</a></li>
+
+    <li class="navigation__item"><a href="#" class="navigation__link js-scroll-to-story"><span>04</span>Stories</a></li>
+
+    <li class="navigation__item"><a href="#" class="navigation__link js-scroll-to-book"><span>05</span>Book now</a></li>
+
    </ul>
   </nav>
  </div>
@@ -46,7 +51,7 @@
  </header>
 
  <main>
-  <section class="section-about">
+  <section class="section-about js-section-about" id="about">
    <div class="u-center-text u-margin-bottom-big">
     <h2 class="heading-secondary">
      Exciting tours for adventurous people
@@ -73,7 +78,7 @@
    </div>
   </section>
 
-  <section class="section-features">
+  <section class="section-features js-section-features" id="features">
 
    <div class="row">
     <div class="col-1-of-4">
@@ -126,7 +131,7 @@
    </div>
   </section>
 
-  <section class="section-tours">
+  <section class="section-tours js-section-tour" id="tours">
    <div class="u-center-text u-margin-bottom-big">
     <h2 class="heading-secondary">
      Most popular tours
@@ -243,7 +248,7 @@
    </div>
 
    <div class="row">
-    <div class="story">
+    <div class="story js-section-story" id="story">
      <figure class="story__shape">
       <img src="img/nat-8.jpg" alt="Person on tour" class="story__img">
       <figcaption class="story__caption">Mary Smith</figcaption>
@@ -280,7 +285,7 @@
 
   </section>
 
-  <section class="section-book">
+  <section class="section-book js-section-book" id="book">
    <div class="row">
     <div class="book">
      <div class="book__form">
@@ -322,7 +327,7 @@
   </section>
  </main>
 
- <footer class="footer">
+ <footer class="footer" id="footer">
   <div class="footer__logo-box">
 
    <picture class="footer__logo">
@@ -369,6 +374,9 @@
    </div>
   </div>
  </div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="js/script.js"></script>
  <!--
             <section class="grid-test">
             <div class="row">
