@@ -3,12 +3,18 @@
     //FUNCTIONALITY
     perspective: 150rem;
     -moz-perspective: 150rem;
+    @supports (-ms-ime-align:auto) {
+        perspective: 300rem;
+    }
     position: relative;
     height: 52rem;
 
     &__side {
         height: 52rem;
-        transition: all .8s ease;
+        transition: all .5s ease;
+        @supports (-ms-ime-align:auto) {
+            transition: all .4s;
+            }
         position: absolute;
         top: 0;
         left: 0;
@@ -56,22 +62,46 @@
     &__picture {
         background-size: cover;
         height: 23rem;
-        background-blend-mode: screen;
+
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        
+        // IE 10 and 11
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            opacity: 0.8;
+        }
         
 
         &--1 {
-            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary), url(../img/nat-5.jpg)
-        }
+            background-blend-mode: screen;
+            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary), url(../img/nat-5.jpg);
+
+            @supports (-ms-ime-align:auto) {
+                background-blend-mode: none;
+                    background-image: url(../img/nat-5.jpg);
+                }
+            }
 
         &--2 {
-            background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary), url(../img/nat-6.jpg)
+            background-blend-mode: screen;
+            background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary), url(../img/nat-6.jpg);
+
+            @supports (-ms-ime-align:auto) {
+                background-blend-mode: none;
+                    background-image: url(../img/nat-6.jpg);
+                }
         }
 
         &--3 {
-            background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary), url(../img/nat-7.jpg)
+            background-blend-mode: screen;
+            background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary), url(../img/nat-7.jpg);
+
+            @supports (-ms-ime-align:auto) {
+                background-blend-mode: none;
+                    background-image: url(../img/nat-7.jpg);
+                }
         }
 
     }
@@ -162,7 +192,7 @@
     //@include respond(tab-port) {
 
     @media only screen and (max-width: 56.25em),
-    only screen and (hover: none) {
+    only (hover: none) {
     
         height: auto;
         border-radius: 3px;

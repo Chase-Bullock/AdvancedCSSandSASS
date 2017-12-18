@@ -17,11 +17,10 @@
         width: 100%;
         padding: 4rem;
         padding-left: 7rem;
+        transform: skewX(0);
+        
     }
 
-    @include respond(phone) {
-        transform: skewX(0);
-    }
 
     &__shape {
         width: 15rem;
@@ -29,28 +28,31 @@
         float: left;
         -webkit-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%);
-
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
-        transform: translateX(-3rem) skewX(12deg);
+        border-radius: 50%;
+        overflow: hidden;
+        -webkit-transform: translateX(-3rem) skewX(12deg);
+                transform: translateX(-3rem) skewX(12deg);
         position: relative;
-        @include respond(phone) {
-            transform: translateX(-3rem) skewX(0);
+
+        @include respond(tab-port) {
+            transform: skewX(0deg);
         }
     
-        
         }
     &__img {
         height: 100%;
-        transform: translateX(-2rem) scale(1.4);
-        backface-visibility: hidden;
+        -webkit-transform: translateX(-2rem) scale(1.4);
+                transform: translateX(-2rem) scale(1.4);
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+        -webkit-transition: all .5s;
         transition: all .5s;
     }
     
     &__text {
         transform: skewX(12deg);
 
-        @include respond(phone) {
+        @include respond(tab-port) {
             transform: skewX(0);
         }
     
